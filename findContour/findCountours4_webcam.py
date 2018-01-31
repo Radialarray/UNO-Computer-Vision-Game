@@ -22,6 +22,7 @@ def auto_canny(img, sigma=0.33):
 cam = cv2.VideoCapture(0)
 
 
+
 while(cam.isOpened()):
 	ret, img = cam.read()
 	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -29,7 +30,7 @@ while(cam.isOpened()):
 	blurVal = 7
 	blurred = cv2.GaussianBlur(gray, (blurVal, blurVal), 0)
 
-	ret, thresh = cv2.threshold(blurred, 70, 255, 0)
+	ret, thresh = cv2.threshold(blurred, 200, 255, 0)
 	im2, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 	# cv2.imshow("Thresh", thresh)
 
