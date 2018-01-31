@@ -3,6 +3,8 @@ import numpy as np
 import time
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
+# Trainiertes Model in Datei speichern
+from sklearn.externals import joblib
 from operator import itemgetter
 from os import listdir
 from os.path import isfile, join, isdir
@@ -64,6 +66,8 @@ clf = KNeighborsClassifier(n_neighbors=1)
 # gearbeitet werden, der Algorithmus klassifiziert letztendlich immer in die Anzahl an Kategorien
 # die beim Lernen verwendet wurden.
 clf.fit(data,labels)
+
+joblib.dump(clf, 'feature_karten.pkl') 
 
 # Statusmeldung / Stoppuhr
 duration = (time.time()-start_time)
