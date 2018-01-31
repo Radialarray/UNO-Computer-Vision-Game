@@ -78,5 +78,5 @@ while(cam.isOpened()):
 			# cv2.imshow("Original", img)
 			# cv2.imshow("Edges", np.hstack([wide, tight, auto]))
 	cv2.imshow("ORIG", img)
-	cv2.imshow("BOUNDING", bound_img)
+	# cv2.imshow("BOUNDING", bound_img)
 	cv2.waitKey(1)

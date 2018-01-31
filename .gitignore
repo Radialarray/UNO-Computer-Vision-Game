@@ -37,12 +37,6 @@ ehthumbs.db
 Thumbs.db
 
 
-#Images#
-*.jpg
-*.gif
-*.png
-*.svg
-*.ico
 
 #Video#
 *.wmv
