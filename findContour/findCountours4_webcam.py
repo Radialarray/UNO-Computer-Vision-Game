@@ -21,6 +21,7 @@ def auto_canny(img, sigma=0.33):
 # Webcam-Loop starten
 cam = cv2.VideoCapture(0)
 
+foundCards = []
 
 
 while(cam.isOpened()):
@@ -53,7 +54,7 @@ while(cam.isOpened()):
 		# cv2.drawContours(img, [cnt], -1, (0,255,0), 3)
 
 		area = cv2.contourArea(cnt)
-		if area > 300 and area < 10000:
+		if area > 5000 and area < 50000:
 
 		    # Draw bounding box
 			rect = cv2.minAreaRect(cnt)
@@ -63,7 +64,7 @@ while(cam.isOpened()):
 
 			x,y,w,h = cv2.boundingRect(cnt)
 			bound_img = img[y:y+h, x:x+w]
-
+			foundCards.append(bound_img)
 			# idx = ind # The index of the contour that surrounds your object
 			mask = np.zeros_like(img) # Create mask where white is what we want, black otherwise
 			cv2.drawContours(mask, contours, idx, (255,255,255), -1) # Draw filled contour in mask
@@ -78,5 +79,7 @@ while(cam.isOpened()):
 			# cv2.imshow("Original", img)
 			# cv2.imshow("Edges", np.hstack([wide, tight, auto]))
 	cv2.imshow("ORIG", img)
-	# cv2.imshow("BOUNDING", bound_img)
+	for idx,img in enumerate(foundCards):
+		cv2.imshow("BOUNDING" + str(idx), img)
+	foundCards[:] = []
 	cv2.waitKey(1)
