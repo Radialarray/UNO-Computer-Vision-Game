@@ -73,9 +73,8 @@ def findInRange( val, minValue, maxValue ):
         return False
 
 
-thresh = 0.1
-maxRed = 0.1
 minRed = 0.9
+maxRed = 0.1
 
 minYellow = 0.1
 maxYellow = 0.3
