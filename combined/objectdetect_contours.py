@@ -21,8 +21,8 @@ clf = joblib.load('../objectDetection/feature_karten.pkl')
 
 # Webcam-Loop starten
 
-cam = cv2.VideoCapture(0)
-cam.set(cv2.CAP_PROP_EXPOSURE, 40) 
+cam = cv2.VideoCapture(1)
+cam.set(cv2.CAP_PROP_EXPOSURE, 40)
 
 
 foundCards = []
