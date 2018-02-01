@@ -21,7 +21,7 @@ while(cam.isOpened()):
 	ret, image = cam.read()
 	image = cv2.pyrDown(image)
 	image = cv2.pyrDown(image)
-	# image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 	# reshape the image to be a list of pixels
 	image = image.reshape((image.shape[0] * image.shape[1], 3))
@@ -35,10 +35,11 @@ while(cam.isOpened()):
 	hist = utils.centroid_histogram(clt)
 	bar = utils.plot_colors(hist, clt.cluster_centers_)
 
-	bar[0][0][1] = 255
+	# bar[0][0][1] = 255
 	domColor = bar[0][0]
 	print(domColor)
 
+	bar = cv2.cvtColor(bar,cv2.COLOR_RGB2BGR)
 	cv2.imshow("DOMCOLOR", bar)
 
 	cv2.waitKey(1)
