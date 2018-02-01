@@ -31,7 +31,7 @@ def plot_colors2(hist, centroids):
     # return the bar chart
     return bar
 
-img = cv2.imread('rot.png')
+img = cv2.imread('gruen.png')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 img = img.reshape((img.shape[0] * img.shape[1],3)) #represent as row*column,channel number
@@ -62,20 +62,35 @@ for idx,elem in enumerate(colors):
 # print(colors)
 # print(saturate)
 
+def findInRange( val, minValue, maxValue ):
+    val = float(val)
+    print('Val ' + str(val))
+    print('minValue ' + str(minValue))
+    print('maxValue ' + str(maxValue))
+    if val >= minValue and val <= maxValue:
+        return True
+    else:
+        return False
 
 
-# thresh = 0.1
-# minBGR =
-# maxBGR = np.array([bgr[0] + thresh, bgr[1] + thresh, bgr[2] + thresh])
-#
-# maskBGR = cv2.inRange(bright,minBGR,maxBGR)
-# resultBGR = cv2.bitwise_and(bright, bright, mask = maskBGR)
+thresh = 0.1
+maxRed = 0.1
+minRed = 0.9
+
+minYellow = 0.1
+maxYellow = 0.3
+
+minGreen = 0.3
+maxGreen = 0.5
+
+minBlue = 0.5
+maxBlue = 0.8
 
 
 # Get the color with most saturation
 print(colors[np.argmax(saturate)])
 
-
+print(findInRange(colors[np.argmax(saturate)][0],minGreen,maxGreen))
 
 plt.axis("off")
 plt.imshow(bar)
