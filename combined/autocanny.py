@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+
+# Canny Detection Algorithm with automatic contrast settings
 def auto_canny(img, sigma=0.33):
 	# compute the median of the single channel pixel intensities
 	v = np.median(img)

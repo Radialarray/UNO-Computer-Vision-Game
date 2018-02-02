@@ -1,3 +1,5 @@
+# Helper file for converting color values from BGR to HSV
+
 import cv2
 import numpy as np
 

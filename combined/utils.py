@@ -46,6 +46,7 @@ def find_histogram(clt):
     hist /= hist.sum()
 
     return hist
+
 def plot_colors2(hist, centroids):
     bar = np.zeros((50, 300, 3), dtype="uint8")
     startX = 0
@@ -60,6 +61,7 @@ def plot_colors2(hist, centroids):
     # return the bar chart
     return bar
 
+# helper function for finding values between ranges
 def findInRange( val, minValue, maxValue ):
 	val = float(val)
 	print('Val ' + str(val))
