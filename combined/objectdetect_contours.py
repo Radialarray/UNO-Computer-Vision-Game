@@ -18,6 +18,8 @@ from os.path import isfile, join, isdir
 # Mathematische "Dimensionalität" des ML-Algorithmus
 dimensions = 128
 hog = cv2.HOGDescriptor()
+
+# load trained model to save startup time
 clf = joblib.load('../objectDetection/feature_karten.pkl')
 
 # start webcam loop

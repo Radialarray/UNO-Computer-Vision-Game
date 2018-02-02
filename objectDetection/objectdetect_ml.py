@@ -67,7 +67,9 @@ clf = KNeighborsClassifier(n_neighbors=1)
 # die beim Lernen verwendet wurden.
 clf.fit(data,labels)
 
-joblib.dump(clf, 'feature_karten.pkl') 
+
+# Hier wird das trainierte Model gespeichert als Datei
+joblib.dump(clf, 'feature_karten.pkl')
 
 # Statusmeldung / Stoppuhr
 duration = (time.time()-start_time)

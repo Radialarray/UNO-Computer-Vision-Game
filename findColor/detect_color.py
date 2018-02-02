@@ -17,6 +17,7 @@ def find_histogram(clt):
     hist /= hist.sum()
 
     return hist
+
 def plot_colors2(hist, centroids):
     bar = np.zeros((50, 300, 3), dtype="uint8")
     startX = 0
@@ -31,11 +32,16 @@ def plot_colors2(hist, centroids):
     # return the bar chart
     return bar
 
+# read test image
 img = cv2.imread('gruen.png')
+
+# convert image to rgb colorspace
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-img = img.reshape((img.shape[0] * img.shape[1],3)) #represent as row*column,channel number
-clt = KMeans(n_clusters=3) #cluster number
+#represent as row*column,channel number
+img = img.reshape((img.shape[0] * img.shape[1],3))
+# number of clusters
+clt = KMeans(n_clusters=3)
 clt.fit(img)
 
 
@@ -73,6 +79,7 @@ def findInRange( val, minValue, maxValue ):
         return False
 
 
+# color ranges
 minRed = 0.9
 maxRed = 0.1
 
@@ -89,8 +96,10 @@ maxBlue = 0.8
 # Get the color with most saturation
 print(colors[np.argmax(saturate)])
 
+# Return colorcheck result
 print(findInRange(colors[np.argmax(saturate)][0],minGreen,maxGreen))
 
+# Show interface
 plt.axis("off")
 plt.imshow(bar)
 plt.show()

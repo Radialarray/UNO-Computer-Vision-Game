@@ -19,6 +19,8 @@ dimensions=128
 # Dieser liefert ähnlich wie klassischen Featureerkenner eine Beschreibung des Bildinhalts
 hog = cv2.HOGDescriptor()
 
+
+# Hier wird das trainierte Model geladen um Zeit am Beginn des Programms zu sparen
 clf = joblib.load('feature_karten.pkl')
 
 ### Ab hier: Klassifizierungs-Test mit 3 bisher unbekannten Bildern
