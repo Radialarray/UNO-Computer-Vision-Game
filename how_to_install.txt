@@ -1,32 +1,13 @@
-# UNO-Computer-Vision-Game
+=== Nützliche Tools / Vorbedingungen
 
-A computer vision project. Using python and cv2 as computer vision library.
+1. Editor mit Python-Support:
+	- PyCharm
+	- Sublime
+	- sonstige, nach eigenem Geschmack und Erfahrung, Syntaxhighlighting sollte jedoch
+	  mindestens dabei sein…
 
-The goal is to play the popular UNO cards game against a computer, which detects the cards in front of it's webcam.
+2. Eventuell: Besseres Terminalprogram, Empfehlung: „iTerm2“
 
-We've made our own training data library of UNO cards.
-
-Change to set up Computer Vision Python Workspace with: `source activate cvws2017`
-
-
-At the moment is in working condition:
-* color detection on single uno cards
-* detection and filtering, where cards on the play area lay.
-* cutting the detected cards for further processing
-* feature detection with a machine learning approach
-* returning detected card (quite accurate)
-* saving the trained model for faster startup speed
-
-Missing:
-* UNO game logic
-* color detection on filtered cards from webcam image
-
-
-
-### How to setup the working environment for development?
-Directly copied from the originator Florian Geißelhart
-
-**_in german_**
 
 === CONDA installieren
 
